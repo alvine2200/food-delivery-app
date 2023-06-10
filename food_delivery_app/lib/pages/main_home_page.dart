@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/widgets/big_texts.dart';
+import 'package:food_delivery_app/widgets/small_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -20,10 +22,10 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Column(
+                  Column(
                     children: [
-                      Text('Country'),
-                      Text('City'),
+                      BigText(text: 'Kenya'),
+                      SmallText(text: 'Nairobi')
                     ],
                   ),
                   Center(
