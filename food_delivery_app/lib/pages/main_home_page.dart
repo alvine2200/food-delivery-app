@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app/widgets/big_texts.dart';
 import 'package:food_delivery_app/widgets/small_text.dart';
 
+import 'food_page_body.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -25,7 +27,18 @@ class _HomePageState extends State<HomePage> {
                   Column(
                     children: [
                       BigText(text: 'Kenya'),
-                      SmallText(text: 'Nairobi')
+                      Row(
+                        children: [
+                          SmallText(
+                            text: 'Nairobi',
+                            size: 13.0,
+                          ),
+                          const Icon(
+                            Icons.arrow_drop_down_rounded,
+                            size: 16.0,
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                   Center(
@@ -46,6 +59,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+          const FoodPage(),
         ],
       ),
     );
