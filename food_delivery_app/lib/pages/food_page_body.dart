@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/widgets/big_texts.dart';
+import 'package:food_delivery_app/widgets/icons_and_text_widgets.dart';
 import 'package:food_delivery_app/widgets/small_text.dart';
 
 class FoodPage extends StatefulWidget {
@@ -83,10 +84,25 @@ class _FoodPageState extends State<FoodPage> {
                       SmallText(text: "comments"),
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  Row(
+                  const SizedBox(height: 15),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      //
+                      IconAndTextWidget(
+                        icon: Icons.circle_sharp,
+                        text: "Normal",
+                        iconColor: Colors.amber,
+                      ),
+                      IconAndTextWidget(
+                        icon: Icons.location_on,
+                        text: "1.7km",
+                        iconColor: Colors.green,
+                      ),
+                      IconAndTextWidget(
+                        icon: Icons.access_time_rounded,
+                        text: "32min",
+                        iconColor: Colors.red,
+                      ),
                     ],
                   ),
                 ],
