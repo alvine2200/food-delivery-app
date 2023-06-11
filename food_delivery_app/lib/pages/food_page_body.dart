@@ -45,8 +45,8 @@ class _FoodPageState extends State<FoodPage> {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: 130,
-            margin: const EdgeInsets.only(left: 30, right: 30, bottom: 15),
+            height: 120,
+            margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color: Colors.white,
@@ -82,7 +82,13 @@ class _FoodPageState extends State<FoodPage> {
                       const SizedBox(width: 10),
                       SmallText(text: "comments"),
                     ],
-                  )
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    children: [
+                      //
+                    ],
+                  ),
                 ],
               ),
             ),
