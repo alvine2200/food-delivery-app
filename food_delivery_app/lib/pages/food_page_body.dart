@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/widgets/big_texts.dart';
+import 'package:food_delivery_app/widgets/small_text.dart';
 
 class FoodPage extends StatefulWidget {
   const FoodPage({super.key});
@@ -8,12 +10,14 @@ class FoodPage extends StatefulWidget {
 }
 
 class _FoodPageState extends State<FoodPage> {
+  final PageController _pageController = PageController(viewportFraction: 0.85);
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.red,
       height: 320,
       child: PageView.builder(
+          controller: _pageController,
           itemCount: 5,
           itemBuilder: (context, index) {
             return _buildPageItem(index);
@@ -41,11 +45,46 @@ class _FoodPageState extends State<FoodPage> {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: 140,
-            margin: const EdgeInsets.only(left: 40, right: 40, bottom: 15),
+            height: 130,
+            margin: const EdgeInsets.only(left: 30, right: 30, bottom: 15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color: Colors.white,
+            ),
+            child: Container(
+              padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  BigText(
+                    text: 'Pizza pepperoni',
+                    size: 24,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Wrap(
+                        children: List.generate(
+                          5,
+                          (index) => Icon(
+                            Icons.star,
+                            color: Colors.amber[700],
+                            size: 15,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      SmallText(text: "4.5"),
+                      const SizedBox(width: 10),
+                      SmallText(text: "1287"),
+                      const SizedBox(width: 10),
+                      SmallText(text: "comments"),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
