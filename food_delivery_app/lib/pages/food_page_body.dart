@@ -28,6 +28,7 @@ class _FoodPageState extends State<FoodPage> {
 
   @override
   void dispose() {
+    super.dispose();
     _pageController.dispose();
   }
 
@@ -35,7 +36,6 @@ class _FoodPageState extends State<FoodPage> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 10),
-      // color: Colors.red,
       height: 320,
       child: PageView.builder(
           controller: _pageController,
@@ -47,7 +47,7 @@ class _FoodPageState extends State<FoodPage> {
   }
 
   Widget _buildPageItem(int index) {
-    Matrix4 matrix = new Matrix4.identity();
+    Matrix4 matrix = Matrix4.identity();
 
     if (index == _currPageValue.floor()) {
       var currScale = 1 - (_currPageValue - index) * (1 - _scaleFactor);
@@ -96,8 +96,23 @@ class _FoodPageState extends State<FoodPage> {
               height: 120,
               margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(20),
                 color: Colors.white,
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0xFFe8e8e8),
+                    blurRadius: 5.0,
+                    offset: Offset(0, 5),
+                  ),
+                  BoxShadow(
+                    color: Colors.white,
+                    offset: Offset(-5, 0),
+                  ),
+                  BoxShadow(
+                    color: Colors.white,
+                    offset: Offset(5, 0),
+                  ),
+                ],
               ),
               child: Container(
                 padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
