@@ -59,6 +59,49 @@ class _FoodPageState extends State<FoodPage> {
                 borderRadius: BorderRadius.circular(5.0)),
           ),
         ),
+        const SizedBox(height: 20),
+        Container(
+          margin: const EdgeInsets.only(left: 20.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(
+                text: 'Popular',
+                color: Colors.black87,
+                size: 20,
+              ),
+              const SizedBox(width: 15),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: BigText(text: '.'),
+              ),
+              const SizedBox(width: 15),
+              Container(
+                child: SmallText(
+                  text: 'Food Pairing',
+                  size: 16.0,
+                ),
+              ),
+              ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: const EdgeInsets.only(left: 20),
+                      child: Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  })
+            ],
+          ),
+        ),
       ],
     );
   }

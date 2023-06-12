@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
           Container(
             child: Container(
               margin: const EdgeInsets.only(top: 30, bottom: 15),
-              padding: const EdgeInsets.only(left: 20, right: 20),
+              padding: const EdgeInsets.only(left: 20.0, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -28,15 +28,15 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       BigText(
                         text: 'Kenya',
-                        size: 24,
-                        color: Colors.blue,
+                        size: 20,
+                        color: Colors.black87,
                       ),
                       Row(
                         children: [
                           SmallText(
                             text: 'Nairobi',
                             size: 16.0,
-                            color: Colors.blueAccent,
+                            color: Colors.black45,
                           ),
                           const Icon(
                             Icons.arrow_drop_down_rounded,
