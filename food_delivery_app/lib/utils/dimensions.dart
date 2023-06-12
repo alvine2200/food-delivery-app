@@ -9,4 +9,9 @@ class Dimensions {
   static double pageViewTextContainer = screenHeight / 7.03;
 
   //textbox height
+  static double height10 = screenHeight / 84.4;
+  static double height20 = screenHeight / 42.2;
+
+  static double font20 = screenHeight / 42.2;
+  static double radius20 = screenHeight / 42.2;
 }

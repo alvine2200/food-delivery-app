@@ -26,12 +26,17 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Column(
                     children: [
-                      BigText(text: 'Kenya'),
+                      BigText(
+                        text: 'Kenya',
+                        size: 24,
+                        color: Colors.blue,
+                      ),
                       Row(
                         children: [
                           SmallText(
                             text: 'Nairobi',
-                            size: 13.0,
+                            size: 16.0,
+                            color: Colors.blueAccent,
                           ),
                           const Icon(
                             Icons.arrow_drop_down_rounded,
@@ -52,6 +57,7 @@ class _HomePageState extends State<HomePage> {
                       child: const Icon(
                         Icons.search,
                         color: Colors.white,
+                        size: 20,
                       ),
                     ),
                   )

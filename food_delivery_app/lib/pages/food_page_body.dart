@@ -132,7 +132,7 @@ class _FoodPageState extends State<FoodPage> {
                 ],
               ),
               child: Container(
-                padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+                padding: const EdgeInsets.only(top: 8, left: 15, right: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -163,7 +163,7 @@ class _FoodPageState extends State<FoodPage> {
                         SmallText(text: "comments"),
                       ],
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 9),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
