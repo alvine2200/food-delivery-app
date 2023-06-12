@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/widgets/big_texts.dart';
 import 'package:food_delivery_app/widgets/icons_and_text_widgets.dart';
@@ -13,7 +14,7 @@ class FoodPage extends StatefulWidget {
 class _FoodPageState extends State<FoodPage> {
   final PageController _pageController = PageController(viewportFraction: 0.85);
 
-  var _currPageValue = 0.0;
+  int _currPageValue = 0;
   final double _scaleFactor = 0.8;
   final double _height = 220.0;
   @override
@@ -21,7 +22,7 @@ class _FoodPageState extends State<FoodPage> {
     super.initState();
     _pageController.addListener(() {
       setState(() {
-        _currPageValue = _pageController.page!;
+        _currPageValue = _pageController.page! as int;
       });
     });
   }
@@ -34,15 +35,30 @@ class _FoodPageState extends State<FoodPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(top: 10),
-      height: 320,
-      child: PageView.builder(
-          controller: _pageController,
-          itemCount: 5,
-          itemBuilder: (context, index) {
-            return _buildPageItem(index);
-          }),
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.only(top: 10),
+          height: 320,
+          child: PageView.builder(
+              controller: _pageController,
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return _buildPageItem(index);
+              }),
+        ),
+        DotsIndicator(
+          dotsCount: 5,
+          position: _currPageValue,
+          decorator: DotsDecorator(
+            size: const Size.square(9.0),
+            activeColor: Colors.blue,
+            activeSize: const Size(13.0, 9.0),
+            activeShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5.0)),
+          ),
+        ),
+      ],
     );
   }
 
