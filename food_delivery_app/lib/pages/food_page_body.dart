@@ -61,7 +61,7 @@ class _FoodPageState extends State<FoodPage> {
         ),
         const SizedBox(height: 20),
         Container(
-          margin: const EdgeInsets.only(left: 20.0),
+          margin: const EdgeInsets.only(left: 10.0),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -76,32 +76,39 @@ class _FoodPageState extends State<FoodPage> {
                 child: BigText(text: '.'),
               ),
               const SizedBox(width: 15),
-              Container(
-                child: SmallText(
-                  text: 'Food Pairing',
-                  size: 16.0,
-                ),
+              SmallText(
+                text: 'Food Pairing',
+                size: 16.0,
               ),
-              ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: const EdgeInsets.only(left: 20),
-                      child: Row(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  })
             ],
           ),
         ),
+        Container(
+          height: 900,
+          child: ListView.builder(
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return Container(
+                  margin:
+                      const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 120,
+                        height: 120,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                          image: const DecorationImage(
+                            image: AssetImage('assets/images/crips.jpeg'),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }),
+        )
       ],
     );
   }
