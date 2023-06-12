@@ -83,9 +83,12 @@ class _FoodPageState extends State<FoodPage> {
             ],
           ),
         ),
+        const SizedBox(height: 20),
         Container(
           height: 900,
           child: ListView.builder(
+              physics: const AlwaysScrollableScrollPhysics(),
+              shrinkWrap: true,
               itemCount: 10,
               itemBuilder: (context, index) {
                 return Container(
