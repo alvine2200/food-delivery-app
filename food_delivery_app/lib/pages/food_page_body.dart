@@ -96,6 +96,7 @@ class _FoodPageState extends State<FoodPage> {
                       const EdgeInsets.only(left: 20, right: 20, bottom: 10),
                   child: Row(
                     children: [
+                      //image container
                       Container(
                         width: 120,
                         height: 120,
@@ -103,8 +104,23 @@ class _FoodPageState extends State<FoodPage> {
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.white,
                           image: const DecorationImage(
+                            fit: BoxFit.cover,
                             image: AssetImage('assets/images/crips.jpeg'),
                           ),
+                        ),
+                      ),
+
+                      //text container
+                      Container(
+                        // margin: const EdgeInsets.only(left: 20),
+                        height: 100,
+                        width: 200,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(15),
+                            bottomRight: Radius.circular(15),
+                          ),
+                          color: Colors.white,
                         ),
                       ),
                     ],
