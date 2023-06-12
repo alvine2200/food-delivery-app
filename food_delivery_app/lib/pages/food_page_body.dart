@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/utils/dimensions.dart';
 import 'package:food_delivery_app/widgets/big_texts.dart';
 import 'package:food_delivery_app/widgets/icons_and_text_widgets.dart';
 import 'package:food_delivery_app/widgets/small_text.dart';
@@ -16,7 +17,7 @@ class _FoodPageState extends State<FoodPage> {
 
   int _currPageValue = 0;
   final double _scaleFactor = 0.8;
-  final double _height = 220.0;
+  final double _height = Dimensions.pageViewContainer;
   @override
   void initState() {
     super.initState();
@@ -39,7 +40,7 @@ class _FoodPageState extends State<FoodPage> {
       children: [
         Container(
           padding: const EdgeInsets.only(top: 10),
-          height: 320,
+          height: Dimensions.pageView,
           child: PageView.builder(
               controller: _pageController,
               itemCount: 5,
@@ -93,7 +94,7 @@ class _FoodPageState extends State<FoodPage> {
       child: Stack(
         children: [
           Container(
-            height: 220,
+            height: Dimensions.pageViewContainer,
             margin: const EdgeInsets.only(left: 8, right: 8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
@@ -109,7 +110,7 @@ class _FoodPageState extends State<FoodPage> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 120,
+              height: Dimensions.pageViewTextContainer,
               margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -162,7 +163,7 @@ class _FoodPageState extends State<FoodPage> {
                         SmallText(text: "comments"),
                       ],
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 20),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
